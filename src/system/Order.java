@@ -112,9 +112,6 @@ public class Order {
                         return meal.getPrice() * (1 - restaurant.getSpecialDiscount());
                     else return meal.getPrice() * (1 - restaurant.getGenericDiscount());
                 }).sum();
-        System.out.println(dishesPrice);
-        System.out.println(mealsPrice);
-        System.out.println(dishesPrice + mealsPrice);
         this.price = this.customer.calculateFidelityPrice(dishesPrice + mealsPrice);
     }
 
