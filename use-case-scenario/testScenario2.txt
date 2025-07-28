@@ -1,18 +1,30 @@
 login ceo 123456789
 registerRestaurant chezJOJO jojo mdp12345 (3.45,2.44)
-showRestaurants
 
 login jojo mdp12345
+addDishRestaurantMenu cote-black-angus Main Standard 18.5
 addDishRestaurantMenu poulet Main Standard 24
+addDishRestaurantMenu soupe-oignon Starter Standard 7.5
 addDishRestaurantMenu tartare_saumon Starter Vegetarian 12
+addDishRestaurantMenu panna-cotta Dessert Standard 6.5
+
 createMeal menu_jour Standard Half
 createMeal menu_soir Standard Full
+
 addDish2Meal poulet menu_jour
 addDish2Meal tartare_saumon menu_jour
-addDish2Meal tartare_saumon menu_soir
+
+addDish2Meal soupe-oignon menu_soir
+addDish2Meal cote-black-angus menu_soir
+addDish2Meal panna-cotta menu_soir
+
 showMeal menu_jour
 showMeal menu_soir
+
 setSpecialOffer menu_jour
 showMeal menu_jour
+
 removeFromSpecialOffer menu_jour
+showMeal menu_jour
+
 logout
