@@ -320,6 +320,10 @@ public class MyFoodoraSystem {
                         .stream()
                         .filter(Courier::isOnDuty)
                         .collect(Collectors.toList());
+
+        if (onDutyCourier.isEmpty()) {
+            throw new RuntimeException("No couriers on duty");
+        }
         return deliveryPolicy.selectCourier(order, onDutyCourier);
     }
 

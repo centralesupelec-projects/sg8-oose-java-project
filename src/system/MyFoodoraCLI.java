@@ -365,7 +365,7 @@ public class MyFoodoraCLI {
         Dish dish = new Dish(dishName, dishCategory, foodCategory, unitPrice);
 
         restaurant.addDish(dish);
-        System.out.println("myfoodora.Dish added to restaurant menu.");
+        System.out.println("myfoodora.Dish added to restaurant menu: " + dish.getName());
     }
 
     public static void createMeal(String[] args) {
@@ -412,8 +412,7 @@ public class MyFoodoraCLI {
             Dish dish = restaurant.getDish(dishName);
 
             meal.addDish(dish);
-            System.out.println("Added dish [" + dish.getName() + "] to meal [" + meal.getName() + "]");
-            System.out.println("myfoodora.Dish added to restaurant.");
+            System.out.println("Added dish [" + dish.getName() + "] to restaurant meal [" + meal.getName() + "]");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -568,7 +567,7 @@ public class MyFoodoraCLI {
 
             String date = args[1];
             myFoodoraSystem.completeOrder(order, date);
-            System.out.println("myfoodora.System.Order [" + order.getName() + "] has been completed on [" + order.getDate() + "] for [" + order.getPrice() + "]€");
+            System.out.println("myfoodora.System.Order [" + order.getName() + "] has been completed on [" + order.getDate() + "] for [" + order.getPrice() + "€] by courier [" + order.getCourier().getUsername() + "]");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
