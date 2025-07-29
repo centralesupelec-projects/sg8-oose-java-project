@@ -1,30 +1,43 @@
 login ceo 123456789
 registerRestaurant chezJOJO jojo mdp12345 (3.45,2.44)
+registerCustomer alex grav gravlax (0,0) gravlax01 grav@lax 0707
+registerCourier Tadej Pogacar Pogi (49.127,6.175) pogiSlo 0101010101
+logout
 
 login jojo mdp12345
-addDishRestaurantMenu cote-black-angus Main Standard 18.5
 addDishRestaurantMenu poulet Main Standard 24
-addDishRestaurantMenu soupe-oignon Starter Standard 7.5
+addDishRestaurantMenu poulet_vege Main Vegetarian 34
+addDishRestaurantMenu entrecote Main Standard 30
+addDishRestaurantMenu oeuf_meurette Starter Gluten_free 15
+addDishRestaurantMenu mousse_choco Dessert Vegetarian 12
 addDishRestaurantMenu tartare_saumon Starter Vegetarian 12
-addDishRestaurantMenu panna-cotta Dessert Standard 6.5
 
 createMeal menu_jour Standard Half
 createMeal menu_soir Standard Full
 
-addDish2Meal poulet menu_jour
+addDish2Meal poulet_vege menu_jour
 addDish2Meal tartare_saumon menu_jour
 
-addDish2Meal soupe-oignon menu_soir
-addDish2Meal cote-black-angus menu_soir
-addDish2Meal panna-cotta menu_soir
+addDish2Meal oeuf_meurette menu_soir
+addDish2Meal entrecote menu_soir
+addDish2Meal mousse_choco menu_soir
 
 showMeal menu_jour
 showMeal menu_soir
-
-setSpecialOffer menu_jour
-showMeal menu_jour
-
-removeFromSpecialOffer menu_jour
-showMeal menu_jour
-
 logout
+
+login Pogi pogiSlo
+onDuty Pogi
+logout
+
+login gravlax gravlax01
+createOrder chezJOJO commande1
+addItem2Order commande1 tartare_saumon
+addItem2Order commande1 entrecote
+addItem2Order commande1 mousse_choco
+endOrder commande1 02/06/2025
+
+login Pogi pogiSlo
+OffDuty Pogi
+logout
+

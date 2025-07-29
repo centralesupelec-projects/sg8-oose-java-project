@@ -1,7 +1,16 @@
 login ceo 123456789
-registerRestaurant chezJOJO jojo mdp12345 (3.45,2.44)
+registerRestaurant chezJOJO jojo mdp12345 (80.45,90.44)
 registerCustomer alex grav gravlax (0,0) gravlax01 grav@lax 0707
-registerCourier Tadej Pogacar Pogi (49.127,6.175) pogiSlo 0101010101
+registerCourier Tadej Pogacar Pogi (60.127,50.175) pogiSlo 0101010101
+registerCourier Jonas Vingegaard Vingo (49.122,10.177) vingoDan 0202020202
+registerCourier Christopher Froome Froomey (49.123,1.176) froomeyGB 0303030303
+registerCourier Eddy Merckx LeCannibale (49.121,2.178) cannibaleBel 0404040404
+registerCourier Raymond Poulidor Poupou (54.124,3.179) poupouFra 0505050505
+onDuty Pogi
+onDuty Vingo
+onDuty Froomey
+onDuty LeCannibale
+onDuty PouPou
 logout
 
 login jojo mdp12345
@@ -11,23 +20,15 @@ addDishRestaurantMenu entrecote Main Standard 30
 addDishRestaurantMenu oeuf_meurette Starter Gluten_free 15
 addDishRestaurantMenu mousse_choco Dessert Vegetarian 12
 addDishRestaurantMenu tartare_saumon Starter Vegetarian 12
-
 createMeal menu_jour Standard Half
 createMeal menu_soir Standard Full
-
 addDish2Meal poulet_vege menu_jour
 addDish2Meal tartare_saumon menu_jour
-
 addDish2Meal oeuf_meurette menu_soir
 addDish2Meal entrecote menu_soir
 addDish2Meal mousse_choco menu_soir
-
 showMeal menu_jour
 showMeal menu_soir
-logout
-
-login Pogi pogiSlo
-onDuty Pogi
 logout
 
 login gravlax gravlax01
@@ -37,7 +38,13 @@ addItem2Order commande1 entrecote
 addItem2Order commande1 mousse_choco
 endOrder commande1 02/06/2025
 
-login Pogi pogiSlo
-OffDuty Pogi
-logout
+login jojo mdp12345
+findDeliverer commande1
+login ceo 123456789
+setDeliveryPolicy Fastest
+login jojo mdp12345
+findDeliverer commande1
 
+login ceo 123456789
+setProfitPolicy MarkupProfit
+logout

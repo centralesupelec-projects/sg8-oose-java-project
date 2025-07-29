@@ -1,19 +1,18 @@
 login ceo 123456789
-registerRestaurant chezJOJO jojo mdp12345 (80.45,90.44)
-registerCustomer alex grav gravlax (0,0) gravlax01 grav@lax 0707
-registerCourier Tadej Pogacar Pogi (60.127,50.175) pogiSlo 0101010101
-registerCourier Jonas Vingegaard Vingo (49.122,10.177) vingoDan 0202020202
-registerCourier Christopher Froome Froomey (49.123,1.176) froomeyGB 0303030303
-registerCourier Eddy Merckx LeCannibale (49.121,2.178) cannibaleBel 0404040404
-registerCourier Raymond Poulidor Poupou (54.124,3.179) poupouFra 0505050505
+registerRestaurant Heureux-comme-Alexandre HeureuxcA hcA57 (44.2,6.2)
+showRestaurantTop
+
+registerCourier Tadej Pogacar Pogi (45.2,6.2) pogiSlo 0734253645
+registerCourier Jonas Vingegaard Vingo (49.2,6.2) vingoDan 0646352413
 onDuty Pogi
 onDuty Vingo
-onDuty Froomey
-onDuty LeCannibale
-onDuty PouPou
+showCourierDeliveries
+
+registerCustomer alex grav gravlax (0,0) gravlax01 grav@lax 0724343433
+showCustomers
 logout
 
-login jojo mdp12345
+login HeureuxcA hcA57
 addDishRestaurantMenu poulet Main Standard 24
 addDishRestaurantMenu poulet_vege Main Vegetarian 34
 addDishRestaurantMenu entrecote Main Standard 30
@@ -32,19 +31,25 @@ showMeal menu_soir
 logout
 
 login gravlax gravlax01
-createOrder chezJOJO commande1
-addItem2Order commande1 tartare_saumon
+associateCard gravlax basic
+createOrder Heureux-comme-Alexandre commande1
 addItem2Order commande1 entrecote
 addItem2Order commande1 mousse_choco
-endOrder commande1 02/06/2025
+addItem2Order commande1 menu_jour
+endOrder commande1 06/02/2025
 
-login jojo mdp12345
-findDeliverer commande1
-login ceo 123456789
-setDeliveryPolicy Fastest
-login jojo mdp12345
-findDeliverer commande1
+associateCard gravlax point
+createOrder Heureux-comme-Alexandre commande2
+addItem2Order commande2 oeuf_meurette
+addItem2Order commande2 menu_soir
+endOrder commande2 02/06/2025
 
-login ceo 123456789
-setProfitPolicy MarkupProfit
-logout
+associateCard gravlax lottery
+createOrder Heureux-comme-Alexandre commande3
+addItem2Order commande3 menu_jour
+addItem2Order commande3 menu_soir
+endOrder commande3 07/29/2025
+
+showRestaurantTop
+showCourierDeliveries
+showTotalProfit
